@@ -4,7 +4,7 @@ blueprint:
     A reusable script that sends an actionable notification to all mobile devices and a persistent notification to the HA dashboard with a confirmation before
     running the selected script.
   domain: script
-  source_url: https://github.com/cordlord/homeassistant/blob/main/blueprints/run_script_on_notification_dismissed.yaml
+  source_url: https://github.com/cordlord/pub-hassio/blob/main/blueprints/optional_actions_on_notification.yaml
   author: cordlord
   input:
     all_devices_group:
