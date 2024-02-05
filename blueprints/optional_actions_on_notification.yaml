@@ -145,6 +145,10 @@ sequence:
         event_type: mobile_app_notification_action
         event_data:
           action: "{{action_dismiss}}"
+      - platform: event
+        event_type: mobile_app_notification_cleared
+        event_data:
+          tag: "{{notification_id}}"
       - platform: persistent_notification
         update_type:
           - removed
@@ -159,9 +163,11 @@ sequence:
           - condition: or
             conditions:
               - condition: template
-                value_template: "{{wait.trigger.id == notification_id}}"
-              - condition: template
                 value_template: "{{wait.trigger.event.data.action == action_dismiss}}"
+              - condition: template
+                value_template: "{{wait.trigger.event.data.tag == notification_id}}"
+              - condition: template
+                value_template: "{{wait.trigger.id == notification_id}}"
         sequence:
           - service: "{{'notify.' + mobile_group}}"
             data:
@@ -202,3 +208,5 @@ sequence:
               entity_id: "{{timeout_script}}"
         else:
           - stop: Notification timeout
+
+  
