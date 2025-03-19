@@ -14,7 +14,7 @@ blueprint:
     Variables can be used to pass data from other automations/scripts by adding a data block with the desired variables and values to the script call.
     Then, add them to this script by using \{\{variable_name\}\} in the corresponding input field.
   domain: script
-  source_url: https://github.com/cordlord/my-homeassistant/blob/3a3d65b20b90aebe82f1bcd0ad07977e7179a24b/blueprints/script/custom/unified_notifications_with_optional_actions.yaml
+  source_url: https://github.com/cordlord/pub-hassio/blob/431f650bae5e79b45467908f8bcf905c05e40147/blueprints/unified_notifications_with__optional_actions.yaml
   author: cordlord
   input:
     all_devices_group:
