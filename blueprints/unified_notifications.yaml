@@ -24,7 +24,7 @@ blueprint:
     min_version: 2024.6.0
   input:
     required:
-      name: Required
+      name: Minnimum (required)
       description: >-
         These are the minimum required inputs in order for the script to function correctly without errors.
       input:
@@ -93,7 +93,7 @@ blueprint:
                 - default
     dismiss:
       collapsed: true
-      name: Dismissed
+      name: Dismissed (optional)
       description: >-
         These settings control what happens when the notification is dismissed.
         
@@ -197,7 +197,7 @@ blueprint:
                   domain: script
     timeout:
       collapsed: true
-      name: Timeout
+      name: Timeout  (optional)
       description: >-
         These settings control what happens when the optional timeout is reached.
         
