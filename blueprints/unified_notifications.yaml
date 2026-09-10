@@ -201,7 +201,9 @@ blueprint:
       description: >-
         These settings control what happens when the optional timeout is reached and no action has been taken.
         
-        If a notification is dismissed or custom actions are used, this script won't fire.
+        
+        If a notification is dismissed or a custom action gets pressed, this script won't fire.
+        
         
         You may use the just the notification, just the script, or both together depending on your needs.
       input:
