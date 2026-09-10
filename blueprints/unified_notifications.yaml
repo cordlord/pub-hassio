@@ -199,8 +199,9 @@ blueprint:
       collapsed: true
       name: Timeout  (optional)
       description: >-
-        These settings control what happens when the optional timeout is reached.
+        These settings control what happens when the optional timeout is reached and no action has been taken.
         
+        If a notification is dismissed or custom actions are used, this script won't fire.
         
         You may use the just the notification, just the script, or both together depending on your needs.
       input:
@@ -437,8 +438,6 @@ sequence:
               - service: script.turn_on
                 target:
                   entity_id: "{{action_1_script}}"
-            else:
-              - stop: Notification dismissed
       - conditions:
           - alias: Test custom mobile action
             condition: template
@@ -460,8 +459,6 @@ sequence:
               - service: script.turn_on
                 target:
                   entity_id: "{{action_2_script}}"
-            else:
-              - stop: Notification dismissed
       - conditions:
           - alias: Test dismissals
             condition: or
