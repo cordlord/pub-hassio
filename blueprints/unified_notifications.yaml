@@ -106,7 +106,7 @@ blueprint:
         image:
           name: "Image URL (optional)"
           description: >-
-            An optional image URL to show in notifications.
+            An optional URL of an image to show in notifications.
             
             
             10MB max file size. Supported file types: JPEG, GIF, PNG.
@@ -125,7 +125,7 @@ blueprint:
         video:
           name: "Video URL (optional)"
           description: >-
-            An optional video URL to show in notifications.
+            An optional URL of a video to show in notifications.
             
             
             50MB max file size. Supported file types: MPEG, MPEG2, MPEG4, AVI.
@@ -141,7 +141,7 @@ blueprint:
         audio:
           name: "Audio URL (optional, iOS ONLY)"
           description: >-
-            An optional audio URL to show in notifications.
+            An optional URL of an audio clip to play in notifications.
             
             
             5MB max file size. Supported file types: AIFF, WAV, MP3, MPEG4 Audio.
