@@ -102,6 +102,12 @@ blueprint:
         
         
         See description of each type for supported types and max size info.
+        
+        
+        For custom media, it is recommended to use the Media Source integration as content is not stored publicly.
+        
+        
+        You can use relative URLs in the format /media/local/direct.jpg with this integration.
       input:
         image:
           name: "Image URL (optional)"
