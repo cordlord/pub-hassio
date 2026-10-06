@@ -466,8 +466,7 @@ sequence:
           - platform: persistent_notification
             update_type:
               - removed
-            notification_id: !input notification_id
-            id: !input notification_id
+            notification_id: "{{notification_id}}"
         timeout:
           minutes: "{{timeout_length}}"
         continue_on_timeout: true
