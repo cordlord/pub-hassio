@@ -478,7 +478,7 @@ sequence:
           - platform: persistent_notification
             update_type:
               - removed
-            notification_id: "{{notification_id}}"
+            notification_id: !input notification_id
         timeout:
           minutes: "{{timeout_length}}"
         continue_on_timeout: true
@@ -504,7 +504,7 @@ sequence:
           - platform: persistent_notification
             update_type:
               - removed
-            notification_id: "{{notification_id}}"
+            notification_id: !input notification_id
   - alias: "Take actions based on what happens."
     choose:
       - conditions:
@@ -561,7 +561,7 @@ sequence:
                 value_template: "{{wait.trigger.event.data.tag == notification_id}}"
               - alias: Test persistant notification dismissed
                 condition: template
-                value_template: "{{wait.trigger.id == notification_id}}"
+                value_template: "{{wait.trigger.notification.notification_id == notification_id}}"
         sequence:
           - if:
               - alias: Check dismiss all
