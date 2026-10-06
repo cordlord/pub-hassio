@@ -95,7 +95,7 @@ blueprint:
       collapsed: true
       name: Media Attachments (optional, mobile only)
       description: >-
-        These settings will add media attachments to notifications. Sepcifically, image, video, or audio (iOS only).
+        These settings will add media attachments to notifications. Sepcifically, image (iOS, Android), video (iOS, Android), or audio (iOS only).
         
         
         Attachments are only applied to mobile notifications.
