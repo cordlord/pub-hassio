@@ -106,7 +106,9 @@ blueprint:
         
         For custom media, it is recommended to use the Media Source integration as content is not stored publicly.
         
+        
         https://www.home-assistant.io/integrations/media_source
+        
         
         You can use relative URLs in the format /media/local/direct.jpg with this integration.
       input:
