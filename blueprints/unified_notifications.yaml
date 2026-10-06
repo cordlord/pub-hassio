@@ -504,8 +504,7 @@ sequence:
           - platform: persistent_notification
             update_type:
               - removed
-            notification_id: !input notification_id
-            id: !input notification_id
+            notification_id: "{{notification_id}}"
   - alias: "Take actions based on what happens."
     choose:
       - conditions:
