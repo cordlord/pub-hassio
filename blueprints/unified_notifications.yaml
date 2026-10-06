@@ -16,7 +16,7 @@ blueprint:
     Then, add them to this script by using \{\{ variable_name \}\} in the corresponding input field.
     
     
-    Templates are also supported for both notification title and message.
+    Templates are also supported for notification title, message, image, and video.
   domain: script
   source_url: https://github.com/cordlord/pub-hassio/blob/main/blueprints/unified_notifications.yaml
   author: cordlord
@@ -51,6 +51,18 @@ blueprint:
         message:
           name: "Message (required)"
           description: "The message of the notification. Used to provide more info."
+          selector:
+            text:
+        image:
+          name: "Image URL (optional)"
+          description: "An optional image URL to show in notifications."
+          default: ""
+          selector:
+            text:
+        video:
+          name: "Video URL (optional)"
+          description: "An optional video URL to show in notifications."
+          default: ""
           selector:
             text:
         notification_id:
@@ -265,6 +277,8 @@ sequence:
       timeout_length: !input timeout_length
       title: !input title
       message: !input message
+      image_url: !input image
+      video_url: !input video
       action_1_text: !input action_1_text
       action_2_text: !input action_2_text
       notification_id: !input notification_id
@@ -300,6 +314,8 @@ sequence:
               title: "{{title}}"
               message: "{{message}}"
               data:
+                image: '{{ image_url | default("") }}'
+                video: '{{ video_url | default("") }}'
                 timeout: "{{mobile_timeout}}"
                 tag: "{{notification_id}}"
                 channel: "{{notification_channel}}"
@@ -324,6 +340,8 @@ sequence:
                   title: "{{title}}"
                   message: "{{message}}"
                   data:
+                    image: '{{ image_url | default("") }}'
+                    video: '{{ video_url | default("") }}'
                     timeout: "{{mobile_timeout}}"
                     tag: "{{notification_id}}"
                     channel: "{{notification_channel}}"
@@ -340,6 +358,8 @@ sequence:
                   title: "{{title}}"
                   message: "{{message}}"
                   data:
+                    image: '{{ image_url | default("") }}'
+                    video: '{{ video_url | default("") }}'
                     timeout: "{{mobile_timeout}}"
                     tag: "{{notification_id}}"
                     channel: "{{notification_channel}}"
@@ -356,6 +376,8 @@ sequence:
           title: "{{title}}"
           message: "{{message}}"
           data:
+            image: '{{ image_url | default("") }}'
+            video: '{{ video_url | default("") }}'
             timeout: "{{mobile_timeout}}"
             tag: "{{notification_id}}"
             channel: "{{notification_channel}}"
