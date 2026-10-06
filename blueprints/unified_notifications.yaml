@@ -131,6 +131,9 @@ blueprint:
             
             
             Images from image entities can use /api/image_proxy/image.name where image.name is replaced by the entity ID of the image entity you wish to use.
+            
+            
+            Android users can also use /api/camera_proxy/camera.name where camera.name is replaced by the entity ID of the camera you wish to use.
           default: ""
           selector:
             text:
