@@ -55,13 +55,38 @@ blueprint:
             text:
         image:
           name: "Image URL (optional)"
-          description: "An optional image URL to show in notifications."
+          description: >-
+            An optional image URL to show in notifications.
+            
+            10MB max file size. Supported file types: JPEG, GIF, PNG.
+            
+            Examples: /media/local/photo.jpg, https://example.com/image.jpg
+            
+            If both image and video are set, only video is shown.
           default: ""
           selector:
             text:
         video:
           name: "Video URL (optional)"
-          description: "An optional video URL to show in notifications."
+          description: >-
+            An optional video URL to show in notifications.
+            
+            50MB max file size. Supported file types: MPEG, MPEG2, MPEG4, AVI.
+            
+            Examples: /media/local/video.mp4, https://example.com/video.mp4
+            
+            If both image and video are set, only video is shown.
+          default: ""
+          selector:
+            text:
+        audio:
+          name: "Audio URL (optional, iOS ONLY)"
+          description: >-
+            An optional audio URL to show in notifications.
+            
+            5MB max file size. Supported file types: AIFF, WAV, MP3, MPEG4 Audio.
+            
+            Examples: /media/local/audio.mp3, https://example.com/audio.mp3
           default: ""
           selector:
             text:
@@ -279,6 +304,7 @@ sequence:
       message: !input message
       image_url: !input image
       video_url: !input video
+      audio_url: !input audio
       action_1_text: !input action_1_text
       action_2_text: !input action_2_text
       notification_id: !input notification_id
@@ -316,6 +342,7 @@ sequence:
               data:
                 image: '{{ image_url | default("") }}'
                 video: '{{ video_url | default("") }}'
+                audio: '{{ audio_url | default("") }}'
                 timeout: "{{mobile_timeout}}"
                 tag: "{{notification_id}}"
                 channel: "{{notification_channel}}"
@@ -342,6 +369,7 @@ sequence:
                   data:
                     image: '{{ image_url | default("") }}'
                     video: '{{ video_url | default("") }}'
+                    audio: '{{ audio_url | default("") }}'
                     timeout: "{{mobile_timeout}}"
                     tag: "{{notification_id}}"
                     channel: "{{notification_channel}}"
@@ -360,6 +388,7 @@ sequence:
                   data:
                     image: '{{ image_url | default("") }}'
                     video: '{{ video_url | default("") }}'
+                    audio: '{{ audio_url | default("") }}'
                     timeout: "{{mobile_timeout}}"
                     tag: "{{notification_id}}"
                     channel: "{{notification_channel}}"
@@ -378,6 +407,7 @@ sequence:
           data:
             image: '{{ image_url | default("") }}'
             video: '{{ video_url | default("") }}'
+            audio: '{{ audio_url | default("") }}'
             timeout: "{{mobile_timeout}}"
             tag: "{{notification_id}}"
             channel: "{{notification_channel}}"
