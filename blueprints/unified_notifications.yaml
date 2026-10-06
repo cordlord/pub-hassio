@@ -124,16 +124,16 @@ blueprint:
             10MB max file size. Supported file types: JPEG, GIF, PNG.
             
             
-            Examples: /media/local/photo.jpg, https://example.com/image.jpg
+            Examples: `/media/local/photo.jpg`, `https://example.com/image.jpg`
             
             
-            If both image and video are set, only video is shown.
+            **If both image and video URLs are provided, only video is shown in notifications.**
             
             
-            Images from image entities can use /api/image_proxy/image.name where image.name is replaced by the entity ID of the image entity you wish to use.
+            Images from image entities can use `/api/image_proxy/image.name` where `image.name` is replaced by the entity ID of the image entity you wish to use.
             
             
-            Android users can also use /api/camera_proxy/camera.name where camera.name is replaced by the entity ID of the camera you wish to use.
+            Android users can also use `/api/camera_proxy/camera.name` where `camera.name` is replaced by the entity ID of the camera you wish to use.
           default: ""
           selector:
             text:
@@ -146,10 +146,10 @@ blueprint:
             50MB max file size. Supported file types: MPEG, MPEG2, MPEG4, AVI.
             
             
-            Examples: /media/local/video.mp4, https://example.com/video.mp4
+            Examples: `/media/local/video.mp4`, `https://example.com/video.mp4`
             
             
-            If both image and video are set, only video is shown.
+            **If both image and video are set, only video is shown.**
           default: ""
           selector:
             text:
@@ -162,7 +162,7 @@ blueprint:
             5MB max file size. Supported file types: AIFF, WAV, MP3, MPEG4 Audio.
             
             
-            Examples: /media/local/audio.mp3, https://example.com/audio.mp3
+            Examples: `/media/local/audio.mp3`, `https://example.com/audio.mp3`
           default: ""
           selector:
             text:
