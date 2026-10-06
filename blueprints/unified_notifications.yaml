@@ -149,7 +149,7 @@ blueprint:
             Examples: `/media/local/video.mp4`, `https://example.com/video.mp4`
             
             
-            **If both image and video are set, only video is shown.**
+            **If both image and video URLs are provided, only video is shown in notifications.**
           default: ""
           selector:
             text:
