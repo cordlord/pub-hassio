@@ -104,7 +104,7 @@ blueprint:
         See description of each type for supported types and max size info.
         
         
-        All attachments are required to be accessible from the internet.
+        Attachments are downloaded by devices when notifications are shown, therefore all attachments are required to be accessible from the internet.
         
         
         For custom attachments, it is recommended to use the Media Source integration as content is not stored publicly and requires authentication from Home Assistant.
