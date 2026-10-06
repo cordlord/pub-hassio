@@ -16,7 +16,7 @@ blueprint:
     Then, add them to this script by using \{\{ variable_name \}\} in the corresponding input field.
     
     
-    Templates are also supported for notification title, message, image, and video.
+    Templates are also supported for notification title, message, image, video, and audio.
   domain: script
   source_url: https://github.com/cordlord/pub-hassio/blob/main/blueprints/unified_notifications.yaml
   author: cordlord
@@ -104,13 +104,13 @@ blueprint:
         See description of each type for supported types and max size info.
         
         
-        For custom media, it is recommended to use the Media Source integration as content is not stored publicly.
+        For custom media, it is recommended to use the Media Source integration as content is not stored publicly and requires authentication from Home Assistant.
         
         
         https://www.home-assistant.io/integrations/media_source
         
         
-        You can use relative URLs in the format /media/local/direct.jpg with this integration.
+        You can use relative URLs in the format /media/local/image_name.jpg with this integration.
       input:
         image:
           name: "Image URL (optional)"
