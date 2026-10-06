@@ -18,7 +18,7 @@ blueprint:
     
     Templates are also supported for notification title, message, image, video, and audio.
   domain: script
-  source_url: https://github.com/cordlord/pub-hassio/blob/main/blueprints/unified_notifications.yaml
+  source_url: https://github.com/cordlord/pub-hassio/blob/main/blueprints/unified_notifications_using_actions.yaml
   author: cordlord
   homeassistant:
     min_version: 2024.6.0
